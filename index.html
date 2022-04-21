@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Work+Sans");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      body {
+        /* background-color: #717c89; */
+        font-family: "Work Sans", Verdana, Geneva, Tahoma, sans-serif;
+        line-height: 1.5;
+      }
+
+      .wrapper {
+        position: relative;
+        max-width: 1020px;
+        margin: 3rem auto;
+        padding: 4.5rem 3.5rem;
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: 0 0 20px rgba(80, 95, 109, 0.4);
+        border-radius: 8px;
+      }
+
+      .card:hover,
+      .card:active {
+        background-color: #ffffff;
+        color: #000000;
+        box-shadow: 0 0 20px rgba(80, 95, 109, 0.4);
+        border-radius: 8px;
+      }
+      #title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 2.5rem;
+        color: #e75a7c;
+        text-shadow: 0 0 5px rgba(231, 90, 124, 0.4);
+      }
+      #description {
+        margin-top: -0.5rem;
+        text-align: center;
+        font-style: italic;
+      }
+      #survey-form {
+        display: grid;
+        margin-top: 1rem;
+        grid-template-columns: 1fr;
+        grid-column-gap: 1rem;
+      }
+      .label-input {
+        position: relative;
+        padding-left: 20px;
+        /* border-bottom: 1px solid rgb(0, 0, 0); */
+      }
+      .label-input label {
+        display: block;
+
+        margin-top: 1rem;
+      }
+      .label-input .icon {
+        position: absolute;
+        right: 10px;
+        top: 49px;
+        color: #777;
+      }
+      .radios .radio,
+      .checkboxes .checkbox {
+        display: block;
+        margin-right: 1rem;
+      }
+
+      .radios .radio input,
+      .checkboxes .checkbox input {
+        vertical-align: middle;
+        margin-right: 0.2rem;
+        cursor: pointer;
+      }
+
+      .radios,
+      .checkboxes {
+        margin-bottom: 1rem;
+      }
+      #submit {
+        width: 250px;
+        height: 30px;
+        margin: 0 auto;
+        color: #f2f5ea;
+        background-color: #694baf;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      /** BUGFIX **/
+
+      @media (min-width: 650px) {
+        #survey-form {
+          grid-template-columns: 1fr 1fr;
+        }
+        .radios,
+        .checkboxes {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        #submit {
+          grid-column: 1/3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Feedbank and Complaint Form <br />
+        <span>( प्रतिक्रिया र उजुरी फारम )</span>
+      </p>
+      <form action="#" id="survey-form">
+        <!-- question 1  -->
+        <div class="label-input card">
+          <label for="" id="">
+            1. Communication & Behaviour of Employees ? <br />
+            <span>( कर्मचारीहरूको सञ्चार र व्यवहार? )</span></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q1"
+                value="q1_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q1"
+                value="q1_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q1"
+                value="q1_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q1"
+                value="q1_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q1"
+                value="q1_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 2 -->
+        <div class="label-input card">
+          <label for="" id="">
+            2. Dress up and Overall Presentation of Employees ? <br />
+            <span> ( ड्रेस अप र कर्मचारीहरूको समग्र प्रस्तुति? )</span></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q2"
+                value="q2_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q2"
+                value="q2_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q2"
+                value="q2_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q2"
+                value="q2_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q2"
+                value="q2_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 3 -->
+        <div class="label-input card">
+          <label for="" id="">
+            3. Listening and Providing Solution of Complaints, if any ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q3"
+                value="q3_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q3"
+                value="q3_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q3"
+                value="q3_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q3"
+                value="q3_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q3"
+                value="q3_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 4 -->
+        <div class="label-input card">
+          <label for="" id=""
+            >4.Employee's Knowledge on Product and Services of the Bank ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q4"
+                value="q4_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q4"
+                value="q4_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q4"
+                value="q4_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q4"
+                value="q4_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q4"
+                value="q4_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 5 -->
+        <div class="label-input card">
+          <label for="" id=""
+            >5. Waiting Duration for Service ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q5"
+                value="q5_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q5"
+                value="q5_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q5"
+                value="q5_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q5"
+                value="q5_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q5"
+                value="q5_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 6 -->
+        <div class="label-input card">
+          <label for="" id=""
+            >6. Availability of Range of Products and Services ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q6"
+                value="q6_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q6"
+                value="q6_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q6"
+                value="q6_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q6"
+                value="q6_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q6"
+                value="q6_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 7 -->
+        <div class="label-input card">
+          <label for="" id=""
+            >7. Features of Products & Services ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q7"
+                value="q7_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q7"
+                value="q7_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q7"
+                value="q7_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q7"
+                value="q7_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q7"
+                value="q7_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 8 -->
+        <div class="label-input card">
+          <label for="" id=""
+            >8. Overall Environment within the Bank ?
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q8"
+                value="q8_excellent"
+              />Excellent ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q8"
+                value="q8_vgood"
+              />Very Good ( धेरै राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q8"
+                value="q8_good"
+              />Good ( राम्रो )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q8"
+                value="q8_poor"
+              />Poor (नराम्रो)
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q8"
+                value="q8_vpoor"
+              />Very Poor (धेरै नराम्रो)
+            </label>
+          </div>
+        </div>
+
+        <!-- question 9 -->
+        <div class="label-input card">
+          <label for="" id="">
+            9. If you have any issue, is it solved immediately by the branch?
+
+            <br />
+            <span
+              >(यदि तपाइँसँग कुनै समस्या छ भने, यो शाखाबाट तुरुन्तै समाधान
+              हुन्छ?)</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q9"
+                value="q9_yes"
+              />Yes ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q9"
+                value="q9_no"
+              />No ( धेरै राम्रो )
+            </label>
+          </div>
+        </div>
+
+        <!-- question 10 -->
+        <div class="label-input card">
+          <label for="" id="">
+            10. Does the branch staff have knowledge on the products & services
+            of the branch?
+
+            <br />
+            <span
+              >( गुनासो सुन्ने र समाधान प्रदान गर्ने, यदि छ भने? )</span
+            ></label
+          >
+          <div class="radios">
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q10"
+                value="q10_yes"
+              />Yes ( उत्कृष्ट )
+            </label>
+
+            <label for="" class="radio">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="q10"
+                value="q10_no"
+              />No ( धेरै राम्रो )
+            </label>
+          </div>
+        </div>
+
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
